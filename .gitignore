@@ -35,7 +35,6 @@ build/
 ### Properties ###
 */main/resources/application.properties
 */main/resources/application-dev.yaml
-*/main/resources/application-prod.yaml
 */main/resources/application.yaml
 *.env.local
 *.application.properties
