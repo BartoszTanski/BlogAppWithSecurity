@@ -39,6 +39,8 @@ spring:
 user:
   email:
     from: ${BT_USER_EMAIL_FROM}
+  default:
+    password: ${BT_USER_DEFAULT_PASSWORD}
 management:
   endpoints:
     web:
@@ -51,6 +53,3 @@ blog:
     secret: ${BT_BLOG_CLIENT_SECRET}
   auth:
     secret: ${BT_BLOG_AUTH_SECRET}
-user:
-  default:
-    password: ${BT_USER_DEFAULT_PASSWORD}
