@@ -13,9 +13,7 @@ import com.bartosztanski.userservice.user.UserRepository;
 @EnableJpaRepositories(basePackageClasses = UserRepository.class)
 @EnableMongoRepositories(basePackageClasses = {PostRepository.class, VideoFilesRepository.class})
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.bartosztanski.postsservice*",
-		"com.bartosztanski.userservice","com.bartosztanski.userservice.*","com.bartosztanski.mailservice*",
-		"com.bartosztanski.mailservice.*"})
+@ComponentScan(basePackages = {"com.bartosztanski*"})
 public class BlogAppApplication {
 
 	public static void main(String[] args) {
