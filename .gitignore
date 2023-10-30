@@ -44,5 +44,3 @@ application.properties
 mylog.log
 application.yaml
 application-dev.yaml
-*/notification-service/src/main/resources/application-prod.yaml
-*/user-service/src/main/resources/application-prod.yaml
