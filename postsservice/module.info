@@ -1,0 +1,3 @@
+module postsservice {
+    requires bloggingapp.userservice;
+}

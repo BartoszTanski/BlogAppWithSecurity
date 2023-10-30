@@ -1,0 +1,3 @@
+module userservice {
+    requires bloggingapp.notificationservice;
+}
