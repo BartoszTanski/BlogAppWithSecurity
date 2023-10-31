@@ -51,5 +51,6 @@ blog:
     secret: ${BT_BLOG_CLIENT_SECRET}
   auth:
     secret: ${BT_BLOG_AUTH_SECRET}
-  default:
-    password: ${BT_USER_DEFAULT_PASSWORD}
+  user:  
+    default:
+      password: ${BT_USER_DEFAULT_PASSWORD}
