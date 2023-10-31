@@ -8,17 +8,6 @@ on:
     branches:
       - main
   workflow_dispatch:
-env:
-  MONGODB_URI: ${{ secrets.MONGODB_URI }}
-  BT_FRONTEND_URL: ${{ secrets.BT_FRONTEND_URL}}
-  BT_AWS_POSTGRESSQL_PASSWORD: ${{ secrets.BT_AWS_POSTGRESSQL_PASSWORD}}
-  BT_AWS_POSTGRESSQL_URL: ${{ secrets.BT_AWS_POSTGRESSQL_URL}}
-  BT_BLOG_AUTH_SECRET: ${{ secrets.BT_BLOG_AUTH_SECRET}}
-  BT_BLOG_CLIENT_SECRET: ${{ secrets.BT_BLOG_CLIENT_SECRET}}
-  BT_GMAIL_SMTP_PASSWORD: ${{ secrets.BT_GMAIL_SMTP_PASSWORD}}
-  BT_USER_DEFAULT_PASSWORD: ${{ secrets.BT_USER_DEFAULT_PASSWORD}}
-  BT_USER_EMAIL_FROM: ${{ secrets.BT_USER_EMAIL_FROM}}
-  BT_SMTP_EMAIL: ${{ secrets.BT_SMTP_EMAIL}}
 
 jobs:
   build:
@@ -33,7 +22,7 @@ jobs:
           java-version: '17'
 
       - name: Build with Maven
-        run: mvn clean install -DskipTests -X
+        run: mvn clean install
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
@@ -60,5 +49,5 @@ jobs:
         with:
           app-name: 'blogWithSec'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_7ADD43916CEF4F7FA804AE63A8DF5135}}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F37E79A9110414C878D1213EFE5E3FE }}
           package: '*.jar'
