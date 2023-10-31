@@ -2,7 +2,7 @@ spring:
   datasource:
     url: ${BT_AWS_POSTGRESSQL_URL}
     username: postgres
-    password: ${BT_AWS_POSTGRESSQL_PASSWORD}
+    password: jdbc:postgresql://${BT_AWS_POSTGRESSQL_PASSWORD}
     driver-class-name: org.postgresql.Driver
     ssl-mode: require
   jpa:
