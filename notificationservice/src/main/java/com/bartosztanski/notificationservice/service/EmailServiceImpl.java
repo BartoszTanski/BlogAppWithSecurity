@@ -20,7 +20,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
 @Service
-@PropertySource(value={"classpath:/notification-service/src/main/resources/application.yaml"})
+@PropertySource(value={"classpath:/src/main/resources/application.yaml"})
 public class EmailServiceImpl implements EmailService {
 	
 	@Value("${user.email.from}")
