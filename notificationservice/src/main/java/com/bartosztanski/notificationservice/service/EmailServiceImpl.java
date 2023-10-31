@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring6.SpringTemplateEngine;
@@ -20,11 +19,9 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
 @Service
-@PropertySource(value={"classpath:application.yaml"})
 public class EmailServiceImpl implements EmailService {
 	
-	@Value("${user.email.from}")
-	private String NOREPLY_ADDRESS;
+	private String NOREPLY_ADDRESS="(NOREPLY)b.t4nsky@gmail.com";
 	
 	@Autowired
     private JavaMailSender emailSender;
