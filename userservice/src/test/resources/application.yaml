@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: ${BT_AWS_POSTGRESSQL_URL}
+    username: postgres
+    password: ${BT_AWS_POSTGRESSQL_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+    ssl-mode: require
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+frontend:
+  url: ${BT_FRONTEND_URL} 
+blog:
+  client:
+    secret: ${BT_BLOG_CLIENT_SECRET}
+  auth:
+    secret: ${BT_BLOG_AUTH_SECRET}
+  user:  
+    default:
+      password: ${BT_USER_DEFAULT_PASSWORD}
