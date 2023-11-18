@@ -23,8 +23,7 @@ import jakarta.mail.internet.MimeMessage;
 @PropertySource(value={"classpath:application.yaml"})
 public class EmailServiceImpl implements EmailService {
 	
-	@Value("${user.email.from}")
-	private String NOREPLY_ADDRESS;
+	private String NOREPLY_ADDRESS="(NOREPLY)b.t4nsky@gmail.com";
 	
 	@Autowired
     private JavaMailSender emailSender;

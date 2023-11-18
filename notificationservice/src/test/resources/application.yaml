@@ -1,0 +1,19 @@
+spring:
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+    host: 'smtp.gmail.com'
+    username:  ${BT_SMTP_EMAIL}
+    password: ${BT_GMAIL_SMTP_PASSWORD}
+    port: '587'
+    templates:
+      path: mail-templates
+user:
+  email:
+    from: ${BT_USER_EMAIL_FROM} 
+frontend:
+  url: ${BT_FRONTEND_URL} 

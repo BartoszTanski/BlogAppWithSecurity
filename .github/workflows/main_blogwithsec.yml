@@ -1,0 +1,63 @@
+# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
+# More GitHub Actions for Azure: https://github.com/Azure/actions
+
+name: Build and deploy JAR app to Azure Web App - blogWithSec
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+env:
+  MONGODB_URI: ${{ secrets.MONGODB_URI }}
+  BT_FRONTEND_URL: ${{ secrets.BT_FRONTEND_URL}}
+  BT_AWS_POSTGRESSQL_PASSWORD: ${{ secrets.BT_AWS_POSTGRESSQL_PASSWORD}}
+  BT_AWS_POSTGRESSQL_URL: ${{ secrets.BT_AWS_POSTGRESSQL_URL}}
+  BT_BLOG_AUTH_SECRET: ${{ secrets.BT_BLOG_AUTH_SECRET}}
+  BT_BLOG_CLIENT_SECRET: ${{ secrets.BT_BLOG_CLIENT_SECRET}}
+  BT_GMAIL_SMTP_PASSWORD: ${{ secrets.BT_GMAIL_SMTP_PASSWORD}}
+  BT_USER_DEFAULT_PASSWORD: ${{ secrets.BT_USER_DEFAULT_PASSWORD}}
+  BT_USER_EMAIL_FROM: ${{ secrets.BT_USER_EMAIL_FROM}}
+  BT_SMTP_EMAIL: ${{ secrets.BT_SMTP_EMAIL}}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Java version
+        uses: actions/setup-java@v1
+        with:
+          java-version: '17'
+
+      - name: Build with Maven
+        run: mvn clean install
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v3
+        with:
+          name: java-app
+          path: '${{ github.workspace }}/target/*.jar'
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: 'Production'
+      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v3
+        with:
+          name: java-app
+
+      - name: Deploy to Azure Web App
+        id: deploy-to-webapp
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'blogWithSec'
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8F37E79A9110414C878D1213EFE5E3FE }}
+          package: '*.jar'
