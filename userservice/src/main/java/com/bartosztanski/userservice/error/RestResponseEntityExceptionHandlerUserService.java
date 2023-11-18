@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
+import io.jsonwebtoken.MalformedJwtException;
+
 @ControllerAdvice
 @ResponseStatus
 public class RestResponseEntityExceptionHandlerUserService extends ResponseEntityExceptionHandler {
@@ -19,5 +21,13 @@ public class RestResponseEntityExceptionHandlerUserService extends ResponseEntit
 		ErrorMessage message = new ErrorMessage(HttpStatus.NOT_ACCEPTABLE,userAlreadyExistsException.getMessage());
 		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(message);
 	}
+	@ExceptionHandler(MalformedJwtException.class)
+	public ResponseEntity<ErrorMessage> malformedJwtException(
+			MalformedJwtException malformedJwtException, WebRequest webRequest) {
+		
+		ErrorMessage message = new ErrorMessage(HttpStatus.NOT_ACCEPTABLE,malformedJwtException.getMessage());
+		return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(message);
+	}
+	
 
 }

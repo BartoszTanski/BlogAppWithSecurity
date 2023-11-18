@@ -38,7 +38,7 @@ public class CommentServiceImpl implements CommentService {
 					.content(commentRequest.getContent())
 					.profilePic(commentRequest.getProfilePic())
 				    .time(dateTime)
-				.build();
+					.build();
 
 		Query query = new Query();
 		query.addCriteria(Criteria.where("id").is(postId));

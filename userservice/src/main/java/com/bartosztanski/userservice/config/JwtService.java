@@ -40,7 +40,7 @@ public class JwtService {
 	public String generateToken(
 			Map<String, Object> extraClaims,
 			UserDetails userDetails) {
-		return generateToken(extraClaims, userDetails, 1000 * 60 * 60 * 24 * 30);
+		return generateToken(extraClaims, userDetails, 2_592_000_000L);
 	}
 	
 	public String generateToken(
@@ -52,7 +52,7 @@ public class JwtService {
 				.setClaims(extraClaims)
 				.setSubject(userDetails.getUsername())
 				.setIssuedAt(new Date(System.currentTimeMillis()))
-				.setExpiration(new Date(System.currentTimeMillis() + expirationTimeMs))
+				.setExpiration(new Date(System.currentTimeMillis()+expirationTimeMs))
 				.signWith(getSigningKey(),SignatureAlgorithm.HS256)
 				.compact();
 	}

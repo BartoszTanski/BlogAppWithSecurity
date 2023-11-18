@@ -43,3 +43,11 @@ application.properties
 mylog.log
 application.yaml
 application-dev.yaml
+Dockerfile
+Docker-compose.yaml
+
+### Resources ###
+*/main/resources/static
+*/main/resources/templates
+*/main/resources/keystore.jks
+

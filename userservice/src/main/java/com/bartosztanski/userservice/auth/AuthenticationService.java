@@ -120,7 +120,7 @@ public class AuthenticationService {
 		var user = repository.findByEmailIgnoreCase(email).orElseThrow(
 				()-> new NoSuchElementException("User with this email doesnt exist"));
 		
-		var jwtToken = jwtService.generateToken(new HashMap<>(), user, 1000*60*10);
+		var jwtToken = jwtService.generateToken(new HashMap<>(), user, 1000*60*10L);
 		log.info("Generated new RESET PASSWORD token for  user: "+ email);
 		
 		Map<String, Object> map = new HashMap<>();
@@ -142,7 +142,7 @@ public class AuthenticationService {
 	
 	public void sendVerifyRegistrationEmail(User user) throws MessagingException {
 		
-		var jwtToken = jwtService.generateToken(new HashMap<>(), user, 1000*60*10);
+		var jwtToken = jwtService.generateToken(new HashMap<>(), user, 1000*60*10L);
 		log.info("Generated new VERIFY REGISTRATION token for  user: "+ user.getEmail());
 		
 		Map<String, Object> map = new HashMap<>();

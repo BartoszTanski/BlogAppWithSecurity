@@ -14,7 +14,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @ComponentScan(basePackages = { "com.bartosztanski.mailservice.sender" })
-@PropertySource(value={"classpath:/notification-service/src/main/resources/application.yaml"})
+@PropertySource(value={"classpath:application.yaml"})
 public class EmailConfiguration {
 
     @Value("${spring.mail.host}")

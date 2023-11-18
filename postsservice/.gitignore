@@ -42,3 +42,7 @@ build/
 src/main/resources/application.properties
 application.properties
 mylog.log
+
+### Resources ###
+*/main/resources/static
+*/main/resources/templates
