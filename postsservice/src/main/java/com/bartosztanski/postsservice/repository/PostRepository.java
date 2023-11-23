@@ -30,7 +30,7 @@ public interface PostRepository extends MongoRepository<PostEntity, String> {
 	PostEntity getCommentsByPostId(String postId);
 
 	@Query(value = "{'time' : { $gt : ?0} }",
-			fields = "{'comments' : 0, 'content' : 0, 'author' : 0, 'profilePic' : 0, 'description' :0}")
+			fields = "{'comments' : 0, 'content' : 0, 'profilePic' : 0, 'description' :0}")
 	Page<PostEntity> findAllExcludeContent(Date date,Pageable pageable);
 
 	@Query(value = "{'tags': ?0}",fields = "{'comments' : 0, 'content' : 0}")

@@ -45,9 +45,12 @@ application.yaml
 application-dev.yaml
 Dockerfile
 Docker-compose.yaml
+userservice/src/main/resources/application.yaml
 
 ### Resources ###
 */main/resources/static
 */main/resources/templates
 */main/resources/keystore.jks
+postsservice/src/main/resources/keystore.jks
+
 
