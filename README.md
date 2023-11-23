@@ -9,5 +9,5 @@
 - MongoDB - posts service
 Communicating with AWS RDS PostgreSQL db. Utilizing Java mail API  
 ## Deployed to AWS EC2 virtual machine
-### frontend: https://bartosztanski.azurewebsites.net/
-### See also: [ Link](https://bartosztanski.azurewebsites.net) for screenshots
+### frontend: [ Link]([https://bartosztanski.azurewebsites.net](https://bartosztanski.azurewebsites.net)
+### See also: [ Link]([https://github.com/BartoszTanski/BlogSB](https://github.com/BartoszTanski/BlogSB) for screenshots
