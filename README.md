@@ -13,35 +13,35 @@ Communicating with AWS RDS PostgreSQL db. Utilizing Java mail API
 ## Home 
 [ Link](https://bartosztanski.azurewebsites.net)
 
-![Home](postservice/screenshots/MainPage.PNG)
+![Home](postsservice/screenshots/MainPage.PNG)
 
 ### Post
 [ Link](https://bartosztanski.azurewebsites.net/posts/6523bc7072bf6b63d22092e8?postIndex=0)
-![Post](postservice/screenshots/Posts1.PNG)
-![Post](postservice/screenshots/Post2.PNG)
+![Post](postsservice/screenshots/Posts1.PNG)
+![Post](postsservice/screenshots/Post2.PNG)
 
 ### Search
 [ Link](https://bartosztanski.azurewebsites.net)
-![Search](postservice/screenshots/Search.PNG)
+![Search](postsservice/screenshots/Search.PNG)
 
 ### Adding post
 [ Link](https://bartosztanski.azurewebsites.net/posts/createPost)
-![Adding post](postservice/screenshots/AddingPost.PNG)
+![Adding post](postsservice/screenshots/AddingPost.PNG)
 
 ### Editing/deleting post
 [_Link - authorization needed](https://bartosztanski.azurewebsites.net/posts/6501fadf13f41a7dc052d57a)
-![Edit/Delete](postservice/screenshots/Editing-deleting.PNG)
+![Edit/Delete](postsservice/screenshots/Editing-deleting.PNG)
 
 ### Editing
 [_Link - authorization needed](https://bartosztanski.azurewebsites.net/posts/edit/6501fadf13f41a7dc052d57a)
-![Editing](postservice/screenshots/Editing.PNG)
+![Editing](postsservice/screenshots/Editing.PNG)
 
 ### Deleting
 [_Link - authorization needed](https://bartosztanski.azurewebsites.net/posts/6501fadf13f41a7dc052d57a)
-![Deleting](postservice/screenshots/Deleting.PNG)
+![Deleting](postsservice/screenshots/Deleting.PNG)
 
 
 ### Adding Comments
 [ Link](https://bartosztanski.azurewebsites.net/posts/6523bc7072bf6b63d22092e8?postIndex=0)
-![Comments](postservice/screenshots/Comment.PNG)
+![Comments](postsservice/screenshots/Comment.PNG)
 
